@@ -1,0 +1,57 @@
+$ink: #191c2b;
+$muted: #4e5368;
+$surface: #f4f5fa;
+$accent: #4338a2;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: $surface;
+  color: $ink;
+  font: 1rem / 1.6 system-ui, sans-serif;
+}
+
+.intro {
+  display: grid;
+  align-items: center;
+  min-block-size: 100vh;
+  min-block-size: 100svh;
+  padding: clamp(1.5rem, 7vw, 7rem);
+}
+
+.intro__content {
+  inline-size: 100%;
+  max-inline-size: 72rem;
+  margin-inline: auto;
+  border-block-start: 2px solid $accent;
+  padding-block: clamp(2rem, 8vw, 7rem);
+
+  h1 {
+    margin: 0;
+    font-size: clamp(2.75rem, 11vw, 8rem);
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+  }
+
+  p {
+    margin-block: 1rem 2rem;
+    color: $muted;
+    font-size: clamp(1.125rem, 3vw, 1.5rem);
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 2.75rem;
+    color: $accent;
+    text-underline-offset: 0.25em;
+  }
+
+  a:focus-visible {
+    outline: 2px solid $accent;
+    outline-offset: 0.25rem;
+  }
+}

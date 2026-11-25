@@ -46,3 +46,9 @@ next-env.d.ts
 .eslintcache
 .turbo
 .swc
+
+# Astro
+/dist/
+/.astro/
+.env.*
+!.env.example
