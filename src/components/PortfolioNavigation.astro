@@ -1,38 +1,21 @@
 ---
-interface Props {
-  variant: 'header' | 'footer';
-}
-
-const { variant } = Astro.props;
 const base = import.meta.env.BASE_URL;
-const home = { label: 'Home', href: base };
-const contact = { label: 'Contact', href: `${base}contact/` };
 const pages = [
-  home,
+  { label: 'Home', href: base },
   { label: 'Projects', href: `${base}projects/` },
   { label: 'Me', href: `${base}me/` },
-  contact,
+  { label: 'Contact', href: `${base}contact/` },
   { label: 'Personal Creativity', href: `${base}personal-creativity/` },
 ];
 const current = (href: string) => Astro.url.pathname === href ? 'page' : undefined;
 ---
 
-{variant === 'header' ? (
-  <header class="site-header">
-    <nav class="site-header__nav" aria-label="Quick links">
-      <a href={home.href} aria-current={current(home.href)}>Home</a>
-      <a class="signature" href={home.href} aria-label="Chiara Volpi, home">Chiara Volpi</a>
-      <a href={contact.href} aria-current={current(contact.href)}>Contact</a>
-    </nav>
-  </header>
-) : (
-  <footer class="site-footer">
-    <nav aria-label="Portfolio pages">
-      <ul>
-        {pages.map(({ label, href }) => (
-          <li><a href={href} aria-current={current(href)}>{label}</a></li>
-        ))}
-      </ul>
-    </nav>
-  </footer>
-)}
+<header class="site-header">
+  <nav aria-label="Portfolio pages">
+    <ul>
+      {pages.map(({ label, href }) => (
+        <li><a href={href} aria-current={current(href)}>{label}</a></li>
+      ))}
+    </ul>
+  </nav>
+</header>

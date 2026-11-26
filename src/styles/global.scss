@@ -62,15 +62,19 @@ a:focus-visible {
   }
 }
 
-.site-header__nav {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 0.5rem;
-  padding-block: clamp(0.5rem, 2vw, 1.25rem);
+.site-header ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: clamp(1rem, 4vw, 3rem);
+  margin: 0;
+  padding: clamp(0.5rem, 2vw, 1.25rem) 0;
+  border-block-end: 1px solid #d8d0e5;
+  list-style: none;
+}
 
-  a:first-child { justify-self: start; }
-  a:last-child { justify-self: end; }
+.site-footer {
+  padding-block: 0.5rem clamp(0.75rem, 2vw, 1.5rem);
 
   .signature {
     font-family: 'Segoe Script', 'Apple Chancery', 'Brush Script MT', cursive;
@@ -112,16 +116,4 @@ a:focus-visible {
     font-size: clamp(2rem, 6vw, 4rem);
     line-height: 1.1;
   }
-}
-
-.site-footer ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  column-gap: clamp(1rem, 4vw, 3rem);
-  max-inline-size: 66rem;
-  margin: 0 auto;
-  padding: 0.5rem 0 1rem;
-  border-block-start: 1px solid #d8d0e5;
-  list-style: none;
 }
