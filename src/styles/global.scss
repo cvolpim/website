@@ -204,6 +204,10 @@ a:focus-visible {
   margin-block-end: 0.5rem;
 }
 
+.project-card__cover, .project-detail__cover {
+  border-radius: 1rem;
+}
+
 .project-card__title {
   font-size: 1.25rem;
   font-weight: 600;
