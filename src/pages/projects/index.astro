@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import { projects } from '../../data/projects';
+
+const projectsPath = `${import.meta.env.BASE_URL}projects/`;
+---
+
+<Base title="Projects · Chiara Volpi Manjarrés" description="Projects from Chiara Volpi Manjarrés’s portfolio.">
+  <main id="content" class="content-page" tabindex="-1">
+    <h1>Projects</h1>
+    <ul class="project-gallery">
+      {projects.map((project) => (
+        <li>
+          <a class="project-card" href={`${projectsPath}${project.slug}/`}>
+            <Image
+              class="project-card__cover"
+              src={project.cover}
+              alt=""
+              widths={[320, 448, 896]}
+              sizes="(max-width: 50rem) 92vw, 30rem"
+            />
+            <span class="project-card__title">{project.title}</span>
+            <span class="project-label">{project.label}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </main>
+</Base>
