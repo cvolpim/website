@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import flightStudies from '../assets/flight-studies.webp';
 ---
 
 <Base
@@ -8,8 +9,12 @@ import Base from '../layouts/Base.astro';
 >
   <main id="content" class="home" tabindex="-1">
     <h1 class="visually-hidden">Chiara Volpi Manjarrés · Portfolio</h1>
-    <div class="visualization">
-      <span>Visualization</span>
-    </div>
+    <p class="visualization" style={`--flight-studies: url('${flightStudies.src}')`}>
+      A little curiosity <span class="visualization__insert" aria-hidden="true">&#123;<span class="visualization__photo visualization__photo--scarlet"></span>&#125;</span>
+      can turn an ordinary <span class="visualization__insert" aria-hidden="true">&#123;<span class="visualization__photo visualization__photo--green"></span>&#125;</span>
+      moment into <span class="visualization__insert" aria-hidden="true">&#123;<span class="visualization__photo visualization__photo--gold"></span>&#125;</span>
+      something worth a <span class="visualization__insert" aria-hidden="true">&#123;<span class="visualization__photo visualization__photo--coral"></span>&#125;</span>
+      second look.
+    </p>
   </main>
 </Base>

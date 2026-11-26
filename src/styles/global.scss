@@ -102,15 +102,37 @@ a:focus-visible {
 }
 
 .visualization {
-  display: grid;
-  place-items: center;
-  inline-size: min(100%, 54rem);
-  min-block-size: clamp(14rem, 48svh, 31rem);
-  padding: 1rem;
-  border: 1px dashed #b5a9cd;
-  background: #f0edf7;
-  color: #584b70;
-  font-size: 0.9375rem;
+  max-inline-size: 23em;
+  margin: 0;
+  color: #22202a;
+  font-size: clamp(1.5rem, 3.8vw, 3.25rem);
+  line-height: 1.35;
+  letter-spacing: -0.035em;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.visualization__insert {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.12em;
+  vertical-align: middle;
+  margin-block: 0.12em;
+  margin-inline-end: 0.16em;
+}
+
+.visualization__photo {
+  display: block;
+  inline-size: 1.48em;
+  aspect-ratio: 1;
+  border-radius: 0.08em;
+  background: #88b5dc var(--flight-studies) no-repeat;
+  background-size: 200% 200%;
+
+  &--scarlet { background-position: left top; }
+  &--green { background-position: right top; }
+  &--gold { background-position: left bottom; }
+  &--coral { background-position: right bottom; }
 }
 
 .content-page {
