@@ -3,6 +3,14 @@ $paper: #f8f7fc;
 $accent: #463778;
 $gutter: clamp(1rem, 4vw, 3.5rem);
 
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('@fontsource-variable/inter/files/inter-latin-wght-normal.woff2') format('woff2');
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -15,7 +23,7 @@ body {
   margin: 0;
   background: $paper;
   color: $ink;
-  font: 1rem / 1.5 system-ui, sans-serif;
+  font: 1rem / 1.5 Inter, system-ui, sans-serif;
 }
 
 a {
@@ -77,9 +85,7 @@ a:focus-visible {
   padding-block: 0.5rem clamp(0.75rem, 2vw, 1.5rem);
 
   .signature {
-    font-family: 'Segoe Script', 'Apple Chancery', 'Brush Script MT', cursive;
     font-size: clamp(1.25rem, 4.5vw, 2.5rem);
-    font-style: italic;
     line-height: 1.2;
     overflow-wrap: anywhere;
   }
