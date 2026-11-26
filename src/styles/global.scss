@@ -81,7 +81,7 @@ a:focus-visible {
     font-size: clamp(1.25rem, 4.5vw, 2.5rem);
     font-style: italic;
     line-height: 1.2;
-    white-space: nowrap;
+    overflow-wrap: anywhere;
   }
 }
 
