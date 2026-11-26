@@ -1,57 +1,127 @@
-$ink: #191c2b;
-$muted: #4e5368;
-$surface: #f4f5fa;
-$accent: #4338a2;
+$ink: #252039;
+$paper: #f8f7fc;
+$accent: #463778;
+$gutter: clamp(1rem, 4vw, 3.5rem);
 
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  background: $surface;
-  color: $ink;
-  font: 1rem / 1.6 system-ui, sans-serif;
-}
-
-.intro {
-  display: grid;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   min-block-size: 100vh;
   min-block-size: 100svh;
-  padding: clamp(1.5rem, 7vw, 7rem);
+  margin: 0;
+  background: $paper;
+  color: $ink;
+  font: 1rem / 1.5 system-ui, sans-serif;
 }
 
-.intro__content {
-  inline-size: 100%;
-  max-inline-size: 72rem;
-  margin-inline: auto;
-  border-block-start: 2px solid $accent;
-  padding-block: clamp(2rem, 8vw, 7rem);
+a {
+  color: inherit;
+  text-underline-offset: 0.3em;
+}
 
-  h1 {
-    margin: 0;
-    font-size: clamp(2.75rem, 11vw, 8rem);
-    line-height: 1.05;
-    overflow-wrap: anywhere;
-  }
+a:focus-visible {
+  outline: 2px solid $accent;
+  outline-offset: 3px;
+}
 
-  p {
-    margin-block: 1rem 2rem;
-    color: $muted;
-    font-size: clamp(1.125rem, 3vw, 1.5rem);
-  }
+.visually-hidden, .skip-link:not(:focus) {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link:focus {
+  position: absolute;
+  z-index: 1;
+  inset-block-start: 0.5rem;
+  inset-inline-start: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: white;
+}
+
+.site-header, .site-footer {
+  padding-inline: $gutter;
 
   a {
     display: inline-flex;
     align-items: center;
     min-block-size: 2.75rem;
-    color: $accent;
-    text-underline-offset: 0.25em;
-  }
+    font-size: 0.9375rem;
+    text-decoration: none;
 
-  a:focus-visible {
-    outline: 2px solid $accent;
-    outline-offset: 0.25rem;
+    &:hover, &[aria-current='page'] {
+      text-decoration: underline;
+    }
   }
+}
+
+.site-header__nav {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.5rem;
+  padding-block: clamp(0.5rem, 2vw, 1.25rem);
+
+  a:first-child { justify-self: start; }
+  a:last-child { justify-self: end; }
+
+  .signature {
+    font-family: 'Segoe Script', 'Apple Chancery', 'Brush Script MT', cursive;
+    font-size: clamp(1.25rem, 4.5vw, 2.5rem);
+    font-style: italic;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+}
+
+.home, .content-page {
+  flex: 1;
+  padding: clamp(1.25rem, 5vw, 4rem) $gutter;
+}
+
+.home {
+  display: grid;
+  place-items: center;
+}
+
+.visualization {
+  display: grid;
+  place-items: center;
+  inline-size: min(100%, 54rem);
+  min-block-size: clamp(14rem, 48svh, 31rem);
+  padding: 1rem;
+  border: 1px dashed #b5a9cd;
+  background: #f0edf7;
+  color: #584b70;
+  font-size: 0.9375rem;
+}
+
+.content-page {
+  inline-size: min(100%, 66rem);
+  margin-inline: auto;
+
+  h1 {
+    margin-block: 0 1rem;
+    font-size: clamp(2rem, 6vw, 4rem);
+    line-height: 1.1;
+  }
+}
+
+.site-footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: clamp(1rem, 4vw, 3rem);
+  max-inline-size: 66rem;
+  margin: 0 auto;
+  padding: 0.5rem 0 1rem;
+  border-block-start: 1px solid #d8d0e5;
+  list-style: none;
 }
